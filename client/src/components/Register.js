@@ -26,6 +26,7 @@ const Register = () => {
         "http://localhost:5001/api/auth/register",
         formData
       );
+      console.log(response.data);
       setSuccess(response.data.message);
       setFormData({ username: "", email: "", password: "" });
       setTimeout(() => navigate("/login"), 2000);
@@ -35,6 +36,7 @@ const Register = () => {
       } else {
         setError("An unexpected error occurred. Please try again.");
       }
+    } finally {
     }
   };
 
